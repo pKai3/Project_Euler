@@ -5,8 +5,12 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 */
 
 #include <stdio.h>
+#include <time.h>
+
 
 int main(){
+
+	clock_t start = clock();
 
 	int t = 999;
 	int bot = 100;
@@ -28,7 +32,7 @@ int main(){
 
 		    originalInteger = c;
 
-		    // reversed integer is stored in variable 
+		    // reversed integer is stored in variable
 		    while( c!=0 )
 		    {
 		        remainder = c%10;
@@ -44,14 +48,14 @@ int main(){
 
 
 		        //printf("*\n");
-		    
+
 		}
 	}
 
 	printf("%d\n", largestP);
+
+	clock_t end = clock();
+	double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
+	printf("found in %fs\n", time_spent);
+
 }
-
-
-
-
-
